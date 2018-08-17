@@ -1,0 +1,60 @@
+﻿@page
+@model FEDPAY.Views.Home.FEDPAY.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Region[0].REG_FSS_REGION_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region[0].REG_FAIM_FB_REGION_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region[0].REG_FEDPAY_REGION_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region[0].REG_ROUTING_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region[0].REG_INFONET_REGION_CODE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Region) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_FSS_REGION_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_FAIM_FB_REGION_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_FEDPAY_REGION_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_ROUTING_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_INFONET_REGION_CODE)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.REG_PO_SUFFIX">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.REG_PO_SUFFIX">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.REG_PO_SUFFIX">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
