@@ -12,7 +12,7 @@ namespace FEDPAY.Models
         public string REG_FSS_REGION_CODE { get; set; }
         public string REG_FAIM_FB_REGION_CODE { get; set; }
         public string REG_FEDPAY_REGION_CODE { get; set; }
-        public decimal REG_ROUTING_ID { get; set; }
+        public string REG_ROUTING_ID { get; set; }
         public string REG_INFONET_REGION_CODE { get; set; }
         
 

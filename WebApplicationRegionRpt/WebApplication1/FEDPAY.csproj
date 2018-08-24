@@ -269,8 +269,8 @@
     <Content Remove="wwwroot\uswds-2.0.0\js\uswds.min.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20180817200851_fedpay.cs" />
-    <Compile Include="Migrations\20180817200851_fedpay.Designer.cs" />
+    <Compile Include="Migrations\20180820232113_Initial.cs" />
+    <Compile Include="Migrations\20180820232113_Initial.Designer.cs" />
     <Compile Include="Migrations\FEDPAYContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>

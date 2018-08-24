@@ -32,7 +32,7 @@ namespace FEDPAY.Migrations
 
                     b.Property<string>("REG_INFONET_REGION_CODE");
 
-                    b.Property<decimal>("REG_ROUTING_ID");
+                    b.Property<string>("REG_ROUTING_ID");
 
                     b.HasKey("REG_PO_SUFFIX");
 

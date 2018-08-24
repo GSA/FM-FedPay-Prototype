@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FEDPAY.Migrations
 {
     [DbContext(typeof(FEDPAYContext))]
-    [Migration("20180817200851_fedpay")]
-    partial class fedpay
+    [Migration("20180820232113_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,7 @@ namespace FEDPAY.Migrations
 
                     b.Property<string>("REG_INFONET_REGION_CODE");
 
-                    b.Property<decimal>("REG_ROUTING_ID");
+                    b.Property<string>("REG_ROUTING_ID");
 
                     b.HasKey("REG_PO_SUFFIX");
 
