@@ -33,14 +33,14 @@ namespace FEDPAY.Controllers
                 return NotFound();
             }
 
-            var region = await _context.Region
+            var regions = await _context.Region
                 .FirstOrDefaultAsync(m => m.REG_PO_SUFFIX == id);
-            if (region == null)
+            if (regions == null)
             {
                 return NotFound();
             }
 
-            return View(region);
+            return View(regions);
         }
 
         // GET: Regions/Create
@@ -73,12 +73,12 @@ namespace FEDPAY.Controllers
                 return NotFound();
             }
 
-            var region = await _context.Region.FindAsync(id);
-            if (region == null)
+            var regions = await _context.Region.FindAsync(id);
+            if (regions == null)
             {
                 return NotFound();
             }
-            return View(region);
+            return View(regions);
         }
 
         // POST: Regions/Edit/5
@@ -124,14 +124,14 @@ namespace FEDPAY.Controllers
                 return NotFound();
             }
 
-            var region = await _context.Region
+            var regions = await _context.Region
                 .FirstOrDefaultAsync(m => m.REG_PO_SUFFIX == id);
-            if (region == null)
+            if (regions == null)
             {
                 return NotFound();
             }
 
-            return View(region);
+            return View(regions);
         }
 
         // POST: Regions/Delete/5
@@ -139,8 +139,8 @@ namespace FEDPAY.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var region = await _context.Region.FindAsync(id);
-            _context.Region.Remove(region);
+            var regions = await _context.Region.FindAsync(id);
+            _context.Region.Remove(regions);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
