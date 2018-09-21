@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<FEDPAY.Models.Region>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "FEDPAY Reports";
 }
 
-<h2>Index</h2>
+<h2>Rgion Report</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -12,6 +12,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.REG_PO_SUFFIX)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.REG_FSS_REGION_CODE)
             </th>
@@ -33,6 +36,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_PO_SUFFIX)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.REG_FSS_REGION_CODE)
             </td>
