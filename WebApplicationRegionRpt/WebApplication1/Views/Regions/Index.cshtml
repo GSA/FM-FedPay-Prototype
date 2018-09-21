@@ -1,0 +1,65 @@
+﻿@model IEnumerable<FEDPAY.Models.Region>
+
+@{
+    ViewData["Title"] = "FEDPAY Reports";
+}
+
+<h2>Rgion Report</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.REG_PO_SUFFIX)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REG_FSS_REGION_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REG_FAIM_FB_REGION_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REG_FEDPAY_REGION_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REG_ROUTING_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REG_INFONET_REGION_CODE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_PO_SUFFIX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_FSS_REGION_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_FAIM_FB_REGION_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_FEDPAY_REGION_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_ROUTING_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REG_INFONET_REGION_CODE)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.REG_PO_SUFFIX">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.REG_PO_SUFFIX">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.REG_PO_SUFFIX">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
