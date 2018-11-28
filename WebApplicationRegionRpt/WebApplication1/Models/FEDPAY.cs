@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using FEDPAY.Models;
 
@@ -14,11 +18,13 @@ namespace FEDPAYmgr.Models
 
 
         public DbSet<FEDPAY.Models.Region> Region { get; set; }
+        public DbSet<FEDPAY.Models.Non_Merchandise_Code> Non_Merchandise_Code { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             ///
             /// Assign default database schema.  
-            /// The database service has limited system access right to create objects in the sift schema
+            /// The database service has limited system access right to create objects 
             /// 
             modelBuilder.HasDefaultSchema("fedpay");
             //base.OnModelCreating(modelBuilder);

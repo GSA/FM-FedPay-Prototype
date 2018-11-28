@@ -1,0 +1,81 @@
+﻿@model FEDPAY.Models.Non_Merchandise_Code;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Non_Merchandise_Code</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NMC_CODE)
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.NMC_MEANING)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NMC_MEANING)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NMC_INVOICE_ACTION)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NMC_INVOICE_ACTION)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NMC_ADMIN_DIFF_IND)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NMC_ADMIN_DIFF_IND)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NMC_PO_TD_CODE)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NMC_PO_TD_CODE)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NMC_BILLING_LIT)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NMC_BILLING_LIT)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NMC_TRANSACTION_ID)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NMC_TRANSACTION_ID)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NMC_ADJUSTMENT_IND)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NMC_ADJUSTMENT_IND)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NMC_SYS_CODE)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NMC_SYS_CODE)
+            </dd>
+        </dl>
+
+        <form method="post">
+            <input type="hidden" asp-for="NMC_CODE" />
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</body>
+</html>

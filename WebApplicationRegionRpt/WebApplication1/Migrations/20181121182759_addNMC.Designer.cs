@@ -2,15 +2,17 @@
 using FEDPAYmgr.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace FEDPAY.Migrations
 {
     [DbContext(typeof(FEDPAYContext))]
-    partial class FEDPAYContextModelSnapshot : ModelSnapshot
+    [Migration("20181121182759_addNMC")]
+    partial class addNMC
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

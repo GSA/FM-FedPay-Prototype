@@ -1,0 +1,86 @@
+﻿@model IEnumerable<FEDPAY.Models.Non_Merchandise_Code>
+@{
+    ViewData["Title"] = "NMC Report";
+}
+
+<h2>Non Merchandise Code Report</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NMC_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NMC_MEANING)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NMC_INVOICE_ACTION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NMC_ADMIN_DIFF_IND)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NMC_PO_TD_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NMC_BILLING_LIT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NMC_TRANSACTION_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NMC_ADJUSTMENT_IND)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NMC_SYS_CODE)
+            </th>
+            <th>
+                Action Type
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMC_CODE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMC_MEANING)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMC_INVOICE_ACTION)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMC_ADMIN_DIFF_IND)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMC_PO_TD_CODE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMC_BILLING_LIT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMC_TRANSACTION_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMC_ADJUSTMENT_IND)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMC_SYS_CODE)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.NMC_CODE">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.NMC_CODE">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.NMC_CODE">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
