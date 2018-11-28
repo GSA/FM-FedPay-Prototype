@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<FEDPAY.Models.Region>
 
 @{
-    ViewData["Title"] = "FEDPAY Reports";
-}
+     ViewData["Title"] = "Region Report";
+}                                                                                                                                                                                                                                                                                  
 
-<h2>Rgion Report</h2>
+<h2>Region Report</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -30,7 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.REG_INFONET_REGION_CODE)
             </th>
-            <th></th>
+            <th>
+                Action Type
+            </th>
         </tr>
     </thead>
     <tbody>

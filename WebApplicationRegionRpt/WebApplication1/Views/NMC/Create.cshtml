@@ -1,0 +1,73 @@
+﻿@model FEDPAY.Models.Non_Merchandise_Code;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Non-Merchandise</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NMC_CODE" class="control-label"></label>
+                <input asp-for="NMC_CODE" class="form-control" />
+                <span asp-validation-for="NMC_CODE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NMC_MEANING" class="control-label"></label>
+                <input asp-for="NMC_MEANING" class="form-control" />
+                <span asp-validation-for="NMC_MEANING" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NMC_INVOICE_ACTION" class="control-label"></label>
+                <input asp-for="NMC_INVOICE_ACTION" class="form-control" />
+                <span asp-validation-for="NMC_INVOICE_ACTION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NMC_ADMIN_DIFF_IND" class="control-label"></label>
+                <input asp-for="NMC_ADMIN_DIFF_IND" class="form-control" />
+                <span asp-validation-for="NMC_ADMIN_DIFF_IND" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NMC_PO_TD_CODE" class="control-label"></label>
+                <input asp-for="NMC_PO_TD_CODE" class="form-control" />
+                <span asp-validation-for="NMC_PO_TD_CODE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NMC_BILLING_LIT" class="control-label"></label>
+                <input asp-for="NMC_BILLING_LIT" class="form-control" />
+                <span asp-validation-for="NMC_BILLING_LIT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NMC_TRANSACTION_ID" class="control-label"></label>
+                <input asp-for="NMC_TRANSACTION_ID" class="form-control" />
+                <span asp-validation-for="NMC_TRANSACTION_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NMC_ADJUSTMENT_IND" class="control-label"></label>
+                <input asp-for="NMC_ADJUSTMENT_IND" class="form-control" />
+                <span asp-validation-for="NMC_ADJUSTMENT_IND" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NMC_SYS_CODE" class="control-label"></label>
+                <input asp-for="NMC_SYS_CODE" class="form-control" />
+                <span asp-validation-for="NMC_SYS_CODE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

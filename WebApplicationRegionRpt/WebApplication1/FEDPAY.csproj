@@ -271,6 +271,8 @@
   <ItemGroup>
     <Compile Include="Migrations\20180820232113_Initial.cs" />
     <Compile Include="Migrations\20180820232113_Initial.Designer.cs" />
+    <Compile Include="Migrations\20181121182759_addNMC.cs" />
+    <Compile Include="Migrations\20181121182759_addNMC.Designer.cs" />
     <Compile Include="Migrations\FEDPAYContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -514,6 +516,11 @@
     <None Include="wwwroot\uswds-2.0.0\js\uswds.js" />
     <None Include="wwwroot\uswds-2.0.0\js\uswds.min.js" />
     <None Include="wwwroot\uswds-2.0.0\js\uswds.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\NMC\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
   </ItemGroup>
 
 
