@@ -1,0 +1,86 @@
+﻿@model IEnumerable<FEDPAY.Models.AdmDiffStmtVw>
+@{
+    ViewData["Title"] = "Admin Diff Report";
+}
+
+
+<h2>Administrative Difference Report </h2> <br />
+<right>
+    <bold>
+        <font color=#00b300 size=+2>
+            Search Criteria   <br />
+            @ViewBag.SearchCriteria
+        </font><br>
+        <font color=#ff3333 size=+2>
+            @ViewBag.SearchRes
+        </font><br>
+    </bold>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ADD_PO_NO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ADD_INVOICE_NO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ADD_AMT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ADD_DATE_OF_DIFF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ADIFF_REASON)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VEN_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VEN_ADDRESS1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VEN_CITY_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VEN_STATE_ABBR)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADD_PO_NO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADD_INVOICE_NO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADD_AMT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADD_DATE_OF_DIFF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADIFF_REASON)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VEN_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VEN_ADDRESS1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VEN_CITY_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VEN_STATE_ABBR)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @Html.ActionLink("NEW SEARCH", "PARAM", new { /* id=item.PrimaryKey */ })

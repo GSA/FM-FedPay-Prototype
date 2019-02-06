@@ -3,15 +3,17 @@ using System;
 using FEDPAYmgr.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace FEDPAY.Migrations
 {
     [DbContext(typeof(FEDPAYContext))]
-    partial class FEDPAYContextModelSnapshot : ModelSnapshot
+    [Migration("20181212233039_addADD")]
+    partial class addADD
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,19 +75,10 @@ namespace FEDPAY.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(6);
 
-                    b.Property<string>("FEM_AD_IRN_CODE")
-                        .HasMaxLength(2);
-
                     b.Property<string>("FEM_FORM_MESSAGE")
                         .HasMaxLength(120);
 
-                    b.Property<string>("FEM_IRN_CODE")
-                        .HasMaxLength(2);
-
                     b.Property<string>("FEM_NMC")
-                        .HasMaxLength(2);
-
-                    b.Property<string>("FEM_SYS_CODE")
                         .HasMaxLength(2);
 
                     b.HasKey("FEM_ERR_CODE");
