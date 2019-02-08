@@ -1,4 +1,4 @@
-﻿@model FEDPAY.Models.Admin_Diff
+﻿@model FEDPAY.Models.AdmDiffStmtVw
 
 @{
     Layout = null;
@@ -13,99 +13,81 @@
 </head>
 <body>
 
-<div>
-    <h4>Admin_Diff</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_VENDOR_NO)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_VENDOR_NO)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_NON_MERCH_CODE)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_NON_MERCH_CODE)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_AMT)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_AMT)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_BILLED_QTY)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_BILLED_QTY)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_BILLED_UCP)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_BILLED_UCP)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_CLAIM_CONTROL_NO)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_CLAIM_CONTROL_NO)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_PO_QTY)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_PO_QTY)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_PO_UCP)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_PO_UCP)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_STOCK_NO)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_STOCK_NO)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_FSS_PO_NO)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_FSS_PO_NO)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_ERROR_CD)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_ERROR_CD)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_DATE_OF_DIFF)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_DATE_OF_DIFF)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ADD_INITIALS)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ADD_INITIALS)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Invoice_Summary)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Invoice_Summary.INS_PO_NO)
-        </dd>
-    </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <h4>Admin_Diff</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_VENDOR_NO)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_VENDOR_NO)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_AMT)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_AMT)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_BILLED_QTY)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_BILLED_QTY)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_BILLED_UCP)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_BILLED_UCP)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_CLAIM_CONTROL_NO)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_CLAIM_CONTROL_NO)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_PO_QTY)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_PO_QTY)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_PO_UCP)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_PO_UCP)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_STOCK_NO)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_STOCK_NO)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_FSS_PO_NO)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_FSS_PO_NO)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_DATE_OF_DIFF)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_DATE_OF_DIFF)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ADD_INITIALS)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ADD_INITIALS)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Index2" asp-route-po="@ViewBag.IndxPO" asp-route-inv="@ViewBag.IndxINV">Back to List</a>
+    </div>
 </body>
 </html>
+
