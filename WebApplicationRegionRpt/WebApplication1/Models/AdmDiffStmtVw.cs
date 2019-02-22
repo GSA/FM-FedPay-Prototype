@@ -23,10 +23,11 @@ namespace FEDPAY.Models
         [Display(Name = "AD SEQ")]
         public int ADD_SEQ_NO { get; set; }
 
+        [Display(Name = "Date of Difference")]
         [DisplayFormat(DataFormatString = "{0:d}")]
         public System.DateTime ADD_DATE_OF_DIFF { get; private set; }
 
-        [Display(Name = "Admin Diff Amount")]
+        [Display(Name = "Difference Amount")]
         [DataType("decimal(12,2)")]
         public decimal ADD_AMT { get; private set; }
 
@@ -44,11 +45,11 @@ namespace FEDPAY.Models
         public string ADD_INITIALS { get; private set; }
 
         [Display(Name = "PO Qty")]
-        public int ADD_PO_QTY { get; private set; }
+        public Nullable<int> ADD_PO_QTY { get; private set; }
 
         [Display(Name = "PO UCP")]
         [DataType("decimal(14,5)")]
-        public decimal ADD_PO_UCP { get; private set; }
+        public Nullable<decimal> ADD_PO_UCP { get; private set; }
 
         [Display(Name = "Stock#")]
         public string ADD_STOCK_NO { get; private set; }
@@ -86,6 +87,14 @@ namespace FEDPAY.Models
         [Display(Name = "Total Diff Amt")]
         [DataType("decimal(12,2)")]
         public decimal TOT_AD_AMT { get; private set; }
+
+        [Display(Name = "Invoice Amt")]
+        [DataType("decimal(12,2)")]
+        public decimal INS_INVOICE_AMT { get; private set; }
+
+        [Display(Name = "Amt Paid")]
+        [DataType("decimal(12,2)")]
+        public decimal INS_AMT_PAID { get; private set; }
 
 
     }

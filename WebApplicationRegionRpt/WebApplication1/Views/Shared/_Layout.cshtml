@@ -120,8 +120,9 @@
                         </button>
                         <ul id="basic-nav-section-three" class="usa-nav-submenu">
                             <li>
-                                @* template: "{controller=Home}/{action=Index}/{id?}")*@
-                                <a href="Admin_Diff/Param">Administrative Difference</a>
+                                @* template: "{controller=Home}/{action=Index}/{id?}")  -- View and Actions make use of the same name 
+                                    This means that by settting View Param below that the Action is also set to Param*@
+                                <a href="/Admin_Diff/Param">Administrative Difference</a>
                             </li>
 
                         </ul>

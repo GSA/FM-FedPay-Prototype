@@ -77,6 +77,47 @@ namespace FEDPAY.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Vname = AdDet.VEN_NAME;
+            ViewBag.Vaddr1 = AdDet.VEN_ADDRESS1;
+            ViewBag.Vaddr2 = AdDet.VEN_ADDRESS2;
+            ViewBag.Vaddr3 = AdDet.VEN_ADDRESS3;
+            ViewBag.Diff_ucp = 0;
+            ViewBag.Diff_qty = 0;
+            ViewBag.Diff_amt4qty = 0.00;
+            ViewBag.Diff_amt4ucp = 0.00;
+
+
+           if (AdDet.ADIFF_REASON == "0S")
+            { if (AdDet.ADD_BILLED_QTY > AdDet.ADD_PO_QTY)
+                { ViewBag.Diff_qty = AdDet.ADD_BILLED_QTY - AdDet.ADD_PO_QTY;
+                }
+                ViewBag.Diff_amt4qty = ViewBag.Diff_qty * AdDet.ADD_BILLED_UCP;
+            }
+
+            if (AdDet.ADIFF_REASON == "0T")
+            {
+                if (AdDet.ADD_BILLED_UCP > AdDet.ADD_PO_UCP)
+                {
+                    ViewBag.Diff_ucp = AdDet.ADD_BILLED_UCP - AdDet.ADD_PO_UCP;
+                }
+                ViewBag.Diff_amt4ucp = ViewBag.Diff_ucp * AdDet.ADD_BILLED_QTY;
+            }
+
+            if (AdDet.ADIFF_REASON == "0U")
+            {
+                if (AdDet.ADD_BILLED_QTY > AdDet.ADD_PO_QTY)
+                {
+                    ViewBag.Diff_qty = AdDet.ADD_BILLED_QTY - AdDet.ADD_PO_QTY;
+                }
+                ViewBag.Diff_amt4qty = ViewBag.Diff_qty * AdDet.ADD_BILLED_UCP;
+                if (AdDet.ADD_BILLED_UCP > AdDet.ADD_PO_UCP)
+                {
+                    ViewBag.Diff_ucp = AdDet.ADD_BILLED_UCP - AdDet.ADD_PO_UCP;
+                }
+                ViewBag.Diff_amt4ucp =  ViewBag.Diff_ucp * AdDet.ADD_PO_QTY;
+            }
+
+            ViewBag.queryRT = DateTime.Now;
 
             return View(AdDet);
         }
@@ -170,7 +211,7 @@ ViewBag.SearchCriteria = "No Search Criteria was Entered";
                 List<AdmDiffStmtVw> addDiff = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_PO_NO == po).ToListAsync();
                 if (addDiff.Count == 0)
                 {
-                    ViewBag.SearchRes = "NO Results were Found for Requested PO";
+                    ViewBag.SearchRes = "NO Results were Found for Requested PO#";
                 }
                 else
                 {
