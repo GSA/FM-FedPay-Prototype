@@ -29,13 +29,16 @@ namespace FEDPAY.Models
 
         [Display(Name = "Difference Amount")]
         [DataType("decimal(12,2)")]
+        [DisplayFormat(DataFormatString = "{0:N2}")]
         public decimal ADD_AMT { get; private set; }
 
         [Display(Name = "Inv Qty")]
+        [DisplayFormat(DataFormatString = "{0:N0}")]
         public int ADD_BILLED_QTY { get; private set; }
 
         [Display(Name = "Inv UCP")]
         [DataType("decimal(14,5)")]
+        [DisplayFormat(DataFormatString = "{0:F5}")]
         public decimal ADD_BILLED_UCP { get; private set; }
 
         [Display(Name = "Claim#")]
@@ -49,6 +52,7 @@ namespace FEDPAY.Models
 
         [Display(Name = "PO UCP")]
         [DataType("decimal(14,5)")]
+        [DisplayFormat(DataFormatString = "{0:F5}")]
         public Nullable<decimal> ADD_PO_UCP { get; private set; }
 
         [Display(Name = "Stock#")]
@@ -86,14 +90,17 @@ namespace FEDPAY.Models
 
         [Display(Name = "Total Diff Amt")]
         [DataType("decimal(12,2)")]
+        [DisplayFormat(DataFormatString = "{0:N2}")]
         public decimal TOT_AD_AMT { get; private set; }
 
         [Display(Name = "Invoice Amt")]
         [DataType("decimal(12,2)")]
+        [DisplayFormat(DataFormatString = "{0:N2}")]
         public decimal INS_INVOICE_AMT { get; private set; }
 
         [Display(Name = "Amt Paid")]
         [DataType("decimal(12,2)")]
+        [DisplayFormat(DataFormatString = "{0:N2}")]
         public decimal INS_AMT_PAID { get; private set; }
 
 
