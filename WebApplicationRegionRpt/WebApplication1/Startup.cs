@@ -39,6 +39,7 @@ namespace FEDPAY
             //
             //Read connection string from appsetting configuration file or Secret Manager
             //
+
             var connectionString = Configuration["ConnectionString:FEDPAY"];
             //
             // dependency injection for PostgreSQL databsae context - SIFTContext
@@ -49,6 +50,12 @@ namespace FEDPAY
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(15);
+                options.Cookie.HttpOnly = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,7 +74,8 @@ namespace FEDPAY
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseSession();
+          
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

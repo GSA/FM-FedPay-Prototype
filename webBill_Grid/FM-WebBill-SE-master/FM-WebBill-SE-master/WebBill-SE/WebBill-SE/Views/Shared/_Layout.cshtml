@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebBill</title>
+
+    <environment include="Development">
+        @* U.S. Web Design System 2.0 *@
+        @* Visit https://v2.designsystem.digital.gov for U.S. Web Design System 2.0 user guide and document *@
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/uswds-2.0.0/css/uswds.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    </environment>
+    <environment exclude="Development">
+        @* Remove BootstrapCDN *@
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/uswds-2.0.0/css/uswds.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    </environment>
+</head>
+<body>
+    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+    <!-- Gov banner BEGIN -->
+
+    <div class="usa-banner">
+        <div class="usa-accordion">
+            <header class="usa-banner-header">
+                <div class="usa-banner-inner">
+                    <div class="grid-col-auto">
+                        <img class="usa-banner-header-flag" src="~/uswds-2.0.0/img/favicons/favicon-57.png" alt="U.S. flag">
+                    </div>
+                    <div class="grid-col-fill tablet:grid-col-auto">
+                        <p class="usa-banner-header-text">An official website of the United States government</p>
+                        <p class="usa-banner-header-action" aria-hidden="true">Here’s how you know</p>
+                    </div>
+                    <button class="usa-accordion-button usa-banner-button"
+                            aria-expanded="false" aria-controls="gov-banner">
+                        <span class="usa-banner-button-text">Here's how you know</span>
+                    </button>
+                </div>
+            </header>
+            <div class="usa-banner-content usa-accordion-content" id="gov-banner">
+                <div class="grid-row grid-gap-lg">
+                    <div class="usa-banner-guidance-gov tablet:grid-col-6">
+                        <img class="usa-banner-icon usa-media_block-img" src="~/uswds-2.0.0/img/icon-dot-gov.svg" alt="Dot gov">
+                        <div class="usa-media_block-body">
+                            <p>
+                                <strong>The .gov means it’s official.</strong>
+                                <br>
+                                Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="usa-banner-guidance-ssl tablet:grid-col-6">
+                        <img class="usa-banner-icon usa-media_block-img" src="~/uswds-2.0.0/img/icon-https.svg" alt="Https">
+                        <div class="usa-media_block-body">
+                            <p>
+                                <strong>The site is secure.</strong>
+                                <br>
+                                The <strong>https://</strong> ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gov banner END -->
+
+
+
+    <div class="usa-overlay"></div>
+    <header class="usa-header usa-header-basic" role="banner">
+        <!-- <div class="usa-nav-container bg-primary-darker"> -->
+        <div class="usa-nav-container">
+            <div class="usa-navbar">
+                <div class="usa-logo" id="basic-logo">
+                    <em class="usa-logo-text"><a href="/" title="Home" aria-label="Home">WebBill</a></em>
+                </div>
+                <button class="usa-menu-btn bg-secondary-darker">Menu</button>
+            </div>
+            <nav role="navigation" class="usa-nav">
+                <button class="usa-nav-close"><img src="~/uswds-2.0.0/img/close.svg" alt="close"></button>
+                <ul class="usa-nav-primary usa-accordion">
+                    <li class="usa-nav-primary-item">
+                        <button class="usa-accordion-button usa-nav-link  usa-current" aria-expanded="false" aria-controls="basic-nav-section-one"><span>Report Set 1</span></button>
+                        <ul id="basic-nav-section-one" class="usa-nav-submenu">
+                            <li class="usa-nav-submenu-item">
+                                <a href="#">Purchase Order Query Report</a>
+                            </li>
+                            <li class="usa-nav-submenu-item">
+                                <a href="#">Report 2</a>
+                            </li>
+                            <li class="usa-nav-submenu-item">
+                                <a href="#">Report 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="usa-nav-primary-item">
+                        <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="basic-nav-section-two"><span>Report Set 2</span></button>
+                        <ul id="basic-nav-section-two" class="usa-nav-submenu">
+                            <li class="usa-nav-submenu-item">
+                                <a href="#">Report 4</a>
+                            </li>
+                            <li class="usa-nav-submenu-item">
+                                <a href="#">Report 5</a>
+                            </li>
+                            <li class="usa-nav-submenu-item">
+                                <a href="#">Report 6</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="usa-nav-primary-item">
+                        <a class="usa-nav-link" href="javascript:void(0)"><span>WebBill User Guide</span></a>
+                    </li>
+                </ul><form class="usa-search usa-search-small ">
+                    <div role="search">
+                        <label class="usa-sr-only" for="basic-search-field-small">Search small</label>
+                        <input class="usa-input" id="basic-search-field-small" type="search" name="search">
+                        <button class="usa-button" type="submit"><span class="usa-sr-only">Search</span></button>
+                    </div>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+
+    <partial name="_CookieConsentPartial" />
+    <main class="usa-layout-docs usa-section" id="main-content">
+        @RenderBody()
+        <hr />
+        <footer class="usa-footer usa-footer-slim" role="contentinfo">
+            <div class="grid-container usa-footer-return-to-top">
+                <a href="#">Return to top</a>
+            </div>
+            <div class="usa-footer-primary-section">
+                <div class="grid-row grid-row maxw-desktop margin-x-auto desktop:padding-x-4">
+                    <div class="mobile-lg:grid-col-8">
+                        <nav class="usa-footer-nav">
+                            <ul class="add-list-reset grid-row grid-gap">
+                                <li class="mobile-lg:grid-col-6 desktop:grid-col-auto usa-footer-primary-content">
+                                    <a class="usa-footer-primary-link" href="javascript:void(0);">Home</a>
+                                </li>
+                                <li class="mobile-lg:grid-col-6 desktop:grid-col-auto usa-footer-primary-content">
+                                    <a class="usa-footer-primary-link" href="javascript:void(0);">Customer Services</a>
+                                </li>
+                                <li class="mobile-lg:grid-col-6 desktop:grid-col-auto usa-footer-primary-content">
+                                    <a class="usa-footer-primary-link" href="javascript:void(0);">Gsa.gov</a>
+                                </li>
+                                <li class="mobile-lg:grid-col-6 desktop:grid-col-auto usa-footer-primary-content">
+                                    <a class="usa-footer-primary-link" href="javascript:void(0);">Corporate IT Services</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="mobile-lg:grid-col-4">
+                        <address class="usa-footer-address">
+                            <div class="grid-row grid-gap mobile-lg:grid-gap-0">
+                                <div class="grid-col-auto mobile-lg:grid-col-12 desktop:grid-col-auto">
+                                    <div class="usa-footer-contact_info">
+                                        <a href="tel:1-800-555-5555">(800) CALL-FMIT</a>
+                                    </div>
+                                </div>
+                                <div class="grid-col-auto mobile-lg:grid-col-12 desktop:grid-col-auto">
+                                    <div class="usa-footer-contact_info">
+                                        <a href="mailto:info@agency.gov">fmit-support@gsa.gov</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="usa-footer-secondary-section">
+                <div class="grid-container">
+                    <div class="usa-footer-logo grid-row grid-gap-2">
+                        <div class="grid-col-auto">
+                            <img class="usa-footer-logo-img" src="~/images/gsa/nav-logo.jpg" alt="">
+                        </div>
+                        <div class="grid-col-auto">
+                            <h3 class="usa-footer-logo-heading">General Services Administration</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </main>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/uswds-2.0.0/js/uswds.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"></script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/uswds-2.0.0/js/uswds.js"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

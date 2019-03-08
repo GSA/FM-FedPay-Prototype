@@ -1,0 +1,16 @@
+@model FEDPAY.Models.AdmDiffStmtVw
+@{
+    ViewData["Title"] = "Admin Diff Report";
+}
+
+<h2>Administrative Difference Report</h2>
+
+<form asp-action="Index"  >
+    Please enter one or more search criteria and click Search button <br /> <br />  <br />
+    FEDPAY PO#: <input asp-for="ADD_PO_NO" placeholder="Type in the FEDPAY PO#" /><br>
+    <br>
+    Invoice#: <input asp-for="ADD_INVOICE_NO" placeholder="Type in the INVOICE#" /><br>
+    <br>
+    <input type="submit" value="Search">
+</form>
+
