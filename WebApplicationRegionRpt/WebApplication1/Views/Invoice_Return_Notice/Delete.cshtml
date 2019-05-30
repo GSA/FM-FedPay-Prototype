@@ -1,0 +1,108 @@
+﻿@model FEDPAY.Models.Invoice_Return_Notice
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Invoice_Return_Notice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_INVOICE_NO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_INVOICE_NO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_PO_NO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_PO_NO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_VENDOR_NO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_VENDOR_NO)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_VENDOR_ALT_KEY)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_VENDOR_ALT_KEY)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_INVOICE_RETURN_CODE1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_INVOICE_RETURN_CODE2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_INVOICE_RETURN_CODE3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_INVOICE_RETURN_CODE4)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE5)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_INVOICE_RETURN_CODE5)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_RETURN_AMT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_RETURN_AMT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_DATE_OF_RETURN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_DATE_OF_RETURN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_DATE_RECEIVED)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_DATE_RECEIVED)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IRN_FSS_PO_NO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IRN_FSS_PO_NO)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IRN_ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+</body>
+</html>
