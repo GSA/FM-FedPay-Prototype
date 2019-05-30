@@ -1,0 +1,115 @@
+﻿@model IEnumerable<FEDPAY.Models.Invoice_Return_Notice>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_INVOICE_NO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_PO_NO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_VENDOR_NO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_VENDOR_ALT_KEY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_INVOICE_RETURN_CODE5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_RETURN_AMT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_DATE_OF_RETURN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_DATE_RECEIVED)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRN_FSS_PO_NO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_INVOICE_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_PO_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_VENDOR_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_VENDOR_ALT_KEY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_INVOICE_RETURN_CODE1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_INVOICE_RETURN_CODE2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_INVOICE_RETURN_CODE3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_INVOICE_RETURN_CODE4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_INVOICE_RETURN_CODE5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_RETURN_AMT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_DATE_OF_RETURN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_DATE_RECEIVED)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRN_FSS_PO_NO)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IRN_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IRN_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IRN_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

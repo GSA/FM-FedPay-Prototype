@@ -41,9 +41,15 @@ namespace FEDPAY.Controllers
             var AdDet = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_PO_NO == po).Where(adiff => adiff.ADD_INVOICE_NO == inv).
                 Where(adiff => adiff.ADD_SEQ_NO == seq).FirstOrDefaultAsync();
 
+
+            //if (stype == "PDF")
+            //{/**ENTER CODE TO CALL TEMPLATE FOR PDF  PASS AdDet **/
+            //    public IActionResult CreateAdmDiffPDF(AdmDiffStmtVw AdDet); }
+
             ViewBag.IndxPO = HttpContext.Session.GetString(SessionKeyPO);
             ViewBag.IndxINV = HttpContext.Session.GetString(SessionKeyInv);
-
+            ViewBag.IndxSEQ = seq;
+            ViewBag.IndxSTYPE = "";
 
 
             if (AdDet == null)
@@ -107,10 +113,18 @@ namespace FEDPAY.Controllers
                 po.ADD_INVOICE_NO = invs;
             }
 
+            //if (po.ADD_PO_NO.Substring(0, 1) != "3")
+            //{
+            //    List<AdmDiffStmtVw> addDiff = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_PO_NO == null).ToListAsync();
+            //    ViewBag.SearchCriteria = po.ADD_PO_NO;
+            //    ViewBag.SearchRes = "PO used in Search Criteria must begin with a 3. Please Click New Search and change PO# to a valid PO#";
+            //    return View(addDiff);
+            //}
             if (po.ADD_INVOICE_NO is null && po.ADD_PO_NO != null)
             {
                 HttpContext.Session.SetString(SessionKeyPO, po.ADD_PO_NO);
-                List<AdmDiffStmtVw> addDiff = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_PO_NO == po.ADD_PO_NO).ToListAsync();
+                List<AdmDiffStmtVw> addDiff = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_PO_NO == po.ADD_PO_NO).
+                    OrderByDescending(adiff => adiff.ADD_DATE_OF_DIFF).OrderBy(adiff => adiff.ADD_AMT).ToListAsync();
                 if (addDiff.Count == 0)
                 {
                     ViewBag.SearchRes = "NO Results were Found for Requested PO";
@@ -127,7 +141,8 @@ namespace FEDPAY.Controllers
             {
                 HttpContext.Session.SetString(SessionKeyPO, po.ADD_PO_NO);
                 HttpContext.Session.SetString(SessionKeyInv, po.ADD_INVOICE_NO);
-                List<AdmDiffStmtVw> addDiff = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_PO_NO == po.ADD_PO_NO).Where(adiff => adiff.ADD_INVOICE_NO == po.ADD_INVOICE_NO).ToListAsync();
+                List<AdmDiffStmtVw> addDiff = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_PO_NO == po.ADD_PO_NO).Where(adiff => adiff.ADD_INVOICE_NO == po.ADD_INVOICE_NO).
+                    OrderBy(adiff => adiff.ADD_AMT).ToListAsync();
 
                 if (addDiff.Count == 0)
                 {
@@ -144,7 +159,8 @@ namespace FEDPAY.Controllers
             else if (po.ADD_INVOICE_NO != null && po.ADD_PO_NO is null)
             {
                 HttpContext.Session.SetString(SessionKeyInv, po.ADD_INVOICE_NO);
-                List<AdmDiffStmtVw> addDiff = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_INVOICE_NO == po.ADD_INVOICE_NO).ToListAsync();
+                List<AdmDiffStmtVw> addDiff = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_INVOICE_NO == po.ADD_INVOICE_NO).
+                    OrderByDescending(adiff => adiff.ADD_DATE_OF_DIFF).OrderBy(adiff => adiff.ADD_FSS_PO_NO).OrderBy(adiff => adiff.ADD_AMT).ToListAsync();
 
                 if (addDiff.Count == 0)
                 {
@@ -168,7 +184,6 @@ namespace FEDPAY.Controllers
 
 
         }
-
 
 
     }

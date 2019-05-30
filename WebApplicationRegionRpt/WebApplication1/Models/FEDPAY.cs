@@ -23,6 +23,7 @@ namespace FEDPAYmgr.Models
         public DbSet<FEDPAY.Models.Fedpay_Err_Mes> Fedpay_Err_MES { get; set; }
         public DbSet<FEDPAY.Models.Invoice_Summary> Invoice_Summary { get; set; }
         public DbSet<FEDPAY.Models.Vendor> Vendor { get; set; }
+        public DbSet<FEDPAY.Models.Invoice_Return_Notice> Invoice_Return_Notice { get; set; }
         public DbQuery<FEDPAY.Models.AdmDiffStmtVw> AdmDiffStmtVw { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

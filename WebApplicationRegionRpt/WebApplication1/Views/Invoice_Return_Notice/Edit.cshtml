@@ -1,0 +1,103 @@
+﻿@model FEDPAY.Models.Invoice_Return_Notice
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Invoice_Return_Notice</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IRN_ID" />
+            <div class="form-group">
+                <label asp-for="IRN_INVOICE_NO" class="control-label"></label>
+                <input asp-for="IRN_INVOICE_NO" class="form-control" />
+                <span asp-validation-for="IRN_INVOICE_NO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_PO_NO" class="control-label"></label>
+                <input asp-for="IRN_PO_NO" class="form-control" />
+                <span asp-validation-for="IRN_PO_NO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_VENDOR_NO" class="control-label"></label>
+                <input asp-for="IRN_VENDOR_NO" class="form-control" />
+                <span asp-validation-for="IRN_VENDOR_NO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_VENDOR_ALT_KEY" class="control-label"></label>
+                <input asp-for="IRN_VENDOR_ALT_KEY" class="form-control" />
+                <span asp-validation-for="IRN_VENDOR_ALT_KEY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_INVOICE_RETURN_CODE1" class="control-label"></label>
+                <input asp-for="IRN_INVOICE_RETURN_CODE1" class="form-control" />
+                <span asp-validation-for="IRN_INVOICE_RETURN_CODE1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_INVOICE_RETURN_CODE2" class="control-label"></label>
+                <input asp-for="IRN_INVOICE_RETURN_CODE2" class="form-control" />
+                <span asp-validation-for="IRN_INVOICE_RETURN_CODE2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_INVOICE_RETURN_CODE3" class="control-label"></label>
+                <input asp-for="IRN_INVOICE_RETURN_CODE3" class="form-control" />
+                <span asp-validation-for="IRN_INVOICE_RETURN_CODE3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_INVOICE_RETURN_CODE4" class="control-label"></label>
+                <input asp-for="IRN_INVOICE_RETURN_CODE4" class="form-control" />
+                <span asp-validation-for="IRN_INVOICE_RETURN_CODE4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_INVOICE_RETURN_CODE5" class="control-label"></label>
+                <input asp-for="IRN_INVOICE_RETURN_CODE5" class="form-control" />
+                <span asp-validation-for="IRN_INVOICE_RETURN_CODE5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_RETURN_AMT" class="control-label"></label>
+                <input asp-for="IRN_RETURN_AMT" class="form-control" />
+                <span asp-validation-for="IRN_RETURN_AMT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_DATE_OF_RETURN" class="control-label"></label>
+                <input asp-for="IRN_DATE_OF_RETURN" class="form-control" />
+                <span asp-validation-for="IRN_DATE_OF_RETURN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_DATE_RECEIVED" class="control-label"></label>
+                <input asp-for="IRN_DATE_RECEIVED" class="form-control" />
+                <span asp-validation-for="IRN_DATE_RECEIVED" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IRN_FSS_PO_NO" class="control-label"></label>
+                <input asp-for="IRN_FSS_PO_NO" class="form-control" />
+                <span asp-validation-for="IRN_FSS_PO_NO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

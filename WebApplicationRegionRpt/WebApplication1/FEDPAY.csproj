@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DinkToPdf" Version="1.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
@@ -26,6 +27,7 @@
     <Folder Include="wwwroot\images\gsa\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="Views\IRN.cshtml" />
     <Content Remove="wwwroot\images\gsa\nav-logo.jpg" />
     <Content Remove="wwwroot\css\uswds.min.css" />
     <Content Remove="wwwroot\uswds-2.0.0\css\uswds.css" />
@@ -277,6 +279,8 @@
     <Compile Include="Migrations\20181212233039_addADD.Designer.cs" />
     <Compile Include="Migrations\20190206175527_AdiffStmt.cs" />
     <Compile Include="Migrations\20190206175527_AdiffStmt.Designer.cs" />
+    <Compile Include="Migrations\20190515185843_addIRN.cs" />
+    <Compile Include="Migrations\20190515185843_addIRN.Designer.cs" />
     <Compile Include="Migrations\FEDPAYContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>
