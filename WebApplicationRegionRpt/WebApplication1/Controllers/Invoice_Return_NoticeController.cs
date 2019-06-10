@@ -22,6 +22,7 @@ namespace FEDPAY.Controllers
         // GET: Invoice_Return_Notice
         public async Task<IActionResult> Index()
         {
+            // this needs to be modified to be the IRN input form
             return View(await _context.Invoice_Return_Notice.ToListAsync());
         }
 
