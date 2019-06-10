@@ -62,7 +62,7 @@ namespace FEDPAY.Controllers
             ViewBag.Vaddr3 = AdDet.VEN_ADDRESS3;
             ViewBag.Diff_ucp = 0;
             ViewBag.Diff_qty = 0;
-            ViewBag.Diff_amt4qty = 0.00;
+            ViewBag.Diff_amt4qty = 0;
             ViewBag.Diff_amt4ucp = 0.00;
 
 
@@ -113,6 +113,7 @@ namespace FEDPAY.Controllers
                 po.ADD_INVOICE_NO = invs;
             }
 
+            //Below was used for testing an edit
             //if (po.ADD_PO_NO.Substring(0, 1) != "3")
             //{
             //    List<AdmDiffStmtVw> addDiff = await _context.AdmDiffStmtVw.Where(adiff => adiff.ADD_PO_NO == null).ToListAsync();
